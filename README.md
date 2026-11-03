@@ -3,10 +3,20 @@
 Colour Revit elements by category from a VIKTOR app. Pick categories and colours in VIKTOR, and the app applies
 them to the model that is open in Revit, live, through the [pyRevit Agent Runtime](https://docs.pyrevitlabs.io/agent-runtime/).
 
-<p>
-  <img src="docs/images/viktor-app.webp" alt="VIKTOR app with colour rules per category" width="49%">
-  <img src="docs/images/revit-result.webp" alt="Revit model coloured by category" width="49%">
-</p>
+![VIKTOR app with colour rules per category](docs/images/viktor-app.webp)
+
+![Revit model coloured by category](docs/images/revit-result.webp)
+
+**Guide:** [pyRevit Agent Runtime documentation](https://docs.pyrevitlabs.io/agent-runtime/) ·
+[pyRevit 7.0.0 release notes](https://github.com/pyrevitlabs/pyRevit/releases/tag/v7.0.0.26278%2B2233) ·
+[VIKTOR Revit integration](https://docs.viktor.ai/docs/create-apps/software-integrations/revit/)
+
+## Requirements
+
+- Windows machine with Revit 2021 or newer (tested with Revit 2027)
+- **pyRevit 7.0.0 or newer**: the Agent Runtime and the `pyrevit agent` command were introduced in 7.0.0
+  (released 2026-10-06). Older versions don't have them, and an older `pyrevit` on `PATH` only prints the global usage.
+- VIKTOR Desktop with the Revit worker and a Python 3.10 executable
 
 ## How it works
 
@@ -29,7 +39,8 @@ The target view is either the **active view** in Revit or a **view by name** (e.
 
 ### 1. Install and set up pyRevit
 
-1. Install [pyRevit 7.0 or newer](https://github.com/pyrevitlabs/pyRevit/releases) (`pyRevit_<version>_signed.exe`).
+1. Install [pyRevit 7.0.0 or newer](https://github.com/pyrevitlabs/pyRevit/releases) (`pyRevit_<version>_signed.exe`).
+   Check the version with `pyrevit --version`.
 2. Start Revit, open a model and go to **pyRevit → Settings → Agent Runtime (MCP)**.
 3. Tick **Agent Host (Beta)** and choose how model changes are handled:
    **Ask** (Keep/Discard prompt in Revit for every change, default) or **Auto** (applied directly).
