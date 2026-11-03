@@ -1,0 +1,7 @@
+app_type = "editor"
+registered_name = "revit-colour-by-category"
+python_version = "3.12"
+
+worker_integrations = [
+    "revit",
+]
