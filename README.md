@@ -13,10 +13,10 @@ them to the model that is open in Revit, live, through the [pyRevit Agent Runtim
 
 ## Requirements
 
-- Windows machine with Revit 2021 or newer (tested with Revit 2027)
+- Windows machine with Revit 2024 or newer
 - **pyRevit 7.0.0 or newer**: the Agent Runtime and the `pyrevit agent` command were introduced in 7.0.0
   (released 2026-10-06). Older versions don't have them, and an older `pyrevit` on `PATH` only prints the global usage.
-- VIKTOR Desktop with the Revit worker and a Python 3.10 executable
+- VIKTOR Desktop with the Revit worker
 
 ## How it works
 
@@ -59,8 +59,8 @@ pyrevit agent status
 
 1. Install and log in to [VIKTOR Desktop](https://docs.viktor.ai/docs/create-apps/software-integrations/viktor-desktop/)
    with the same Windows user that runs Revit (the agent host only accepts connections from that user).
-2. Click **Add**, select **Revit** and set the path to the Python executable, for example
-   `C:\Program Files\Python310\python.exe`. The worker script only uses the Python standard library.
+2. Click **Add**, select **Revit** and set the path to the Python executable. The worker script only uses the
+   Python standard library.
 3. Click **Save** and make sure the Revit worker is running.
 
 ![VIKTOR Desktop: configure the Revit worker](docs/images/viktor-desktop-revit-worker.webp)
@@ -96,7 +96,5 @@ pyrevit agent runs
 ## Notes
 
 - Revit must be open with a model. `modify` runs are refused when no document is active.
-- The Revit scripts ship with the app; user input only reaches Revit as values in `inputs`. Do not send code typed by
-  app users to the worker: `query` mode protects the Revit model, not the worker machine.
 - pyRevit stores each run's script and result under `%APPDATA%\pyRevit\agent` for 14 days.
-- The Agent Runtime is marked experimental by pyRevit. Tested with Revit 2027 and pyRevit 7.0.0.
+- The Agent Runtime is marked experimental by pyRevit.
